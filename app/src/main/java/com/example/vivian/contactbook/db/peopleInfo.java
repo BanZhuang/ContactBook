@@ -1,22 +1,24 @@
-package com.example.vivian.contactbook;
+package com.example.vivian.contactbook.db;
 
-import java.io.Serializable;
+import org.litepal.crud.DataSupport;
 
 /**
- * Created by Vivian on 2017/5/11.
+ * Created by Vivian on 2017/5/24.
  */
 
-public class People implements Serializable{
+public class peopleInfo extends DataSupport {
+    private int id;
     private String firstName;
     private String secondName;
     private int imageId;
     private String phoneNumber;
-    public People(String firstName,String secondName,String phoneNumber,int imageId){
-        this.firstName=firstName;
-        this.secondName=secondName;
 
-        this.phoneNumber=phoneNumber;
-        this.imageId=imageId;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getFirstName() {

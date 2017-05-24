@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.vivian.contactbook.MainActivity">
+    <!--<include layout="@layout/contact_item"/>-->
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
