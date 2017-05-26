@@ -25,7 +25,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="FirstName"
         android:ems="10"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/firstName"
@@ -49,7 +48,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="SecondName"
         android:ems="10"
         android:layout_below="@+id/edit_first_name"
         android:layout_alignRight="@+id/edit_first_name"
@@ -80,25 +78,13 @@
         android:layout_height="40dp"
         android:id="@+id/imageView"
         android:background="@mipmap/ic_launcher"/>
-
     <Button
-        android:text="SAVE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/btnSave" />
-
-    <Button
-        android:text="DELETE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnSave"
-        android:layout_centerHorizontal="true"
-
-        android:layout_marginTop="16dp"
-        android:id="@+id/btnDelete" />
-
+    android:text="Save"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true"
+    android:id="@+id/btnSave" />
 
 </RelativeLayout>
 

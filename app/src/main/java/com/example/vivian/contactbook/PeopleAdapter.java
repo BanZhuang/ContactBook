@@ -3,11 +3,14 @@ package com.example.vivian.contactbook;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.vivian.contactbook.db.peopleInfo;
 
 import java.io.Serializable;
 import java.util.List;
@@ -19,9 +22,9 @@ import java.util.List;
  */
 
 public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder> {
-    private List<People> peopleList;
+    private List<peopleInfo> peopleList;
     Context context;
-    public PeopleAdapter(Context context,List<People> peoples){
+    public PeopleAdapter(Context context,List<peopleInfo> peoples){
         this.context=context;
         peopleList=peoples;
     }
@@ -33,9 +36,10 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
             @Override
             public void onClick(View view) {
                 int position=holder.getAdapterPosition();
-                People people=peopleList.get(position);
+                peopleInfo people=peopleList.get(position);
                 Intent intent=new Intent("com.example.vivian.contactbook.ACTION_START");
                 intent.putExtra("data", (Serializable) people);
+                Log.d("adpter", String.valueOf(people.getId()));
 //                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 view.getContext().startActivity(intent);
             }
@@ -47,11 +51,11 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        People people=peopleList.get(position);
+        peopleInfo people=peopleList.get(position);
         holder.firstName.setText(people.getFirstName());
         holder.secondName.setText(people.getSecondName());
         holder.phoneNumber.setText(people.getPhoneNumber());
-        holder.imageView.setImageResource(people.getImageId());
+//        holder.imageView.setImageResource(people.getImageId());
 
 
     }
@@ -73,7 +77,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
             firstName= (TextView) itemView.findViewById(R.id.first_name);
             secondName= (TextView) itemView.findViewById(R.id.second_name);
             phoneNumber= (TextView) itemView.findViewById(R.id.phone_number);
-            imageView= (ImageView) itemView.findViewById(R.id.image_view);
+//            imageView= (ImageView) itemView.findViewById(R.id.image_view);
         }
     }
 }
